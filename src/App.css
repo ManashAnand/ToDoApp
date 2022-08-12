@@ -1,38 +1,204 @@
-.App {
-  text-align: center;
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #7f8fa6;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.mainBar{
+  height: 3rem;
+  border: 2px solid #dcdde1;
+  min-width: 50rem;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  color: white;
+  box-shadow:
+   rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+   rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+#heading{
+  margin:0 1rem;
+}
+#heading::first-letter{color: #ffa502;font-weight: bold;font-size: 1.5rem;}
+#about{
+  margin:0 1rem;
+}
+.switchContainer{
+  position: absolute;
+  height: 2rem;
+  width: 3rem;
+  left: 95%;
+  
+}
+.switch input {
+  opacity: 1;
+  width: 0;
+  height: 0;
+}
+
+.slider{
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color:#dcdde1;
+  transition: .4s;
+  border-radius: 1rem;
+}
+.slider::before{
+  
+  border-radius: 1rem;
+  position: absolute;
+  content: "";
+  height: 1.5rem;
+  width:1.5rem;
+  left: 0.2rem;
+  bottom: 0.3rem;
+  background-color: #ffa502;
+  transition: .4s;
+}
+input:checked + .slider {
+  background-color: #2f3542;
+  
+}
+input:focus + .slider {
+  box-shadow: 0 0 1px #2f3542;
+}
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(19px);
+}
+
+.mainContainer{
+
+  border: 2px solid #dcdde1;
+  height: 30rem;
+  width: 40rem;
+  margin: 3rem auto ;
+  box-shadow:
+  rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+  rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  overflow: auto;
+}
+
+::-webkit-scrollbar {
+  height: 0.4rem;
+  width: 0.4rem;
+  /* transition:all 0.6s; */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #7f8fa6;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ffa502;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  width: 6rem;
+  background: red;
+  cursor: grab;
+}
+
+#mainHeading{
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  color:#2f3542;
+  text-shadow:   2px 2px #a4b0be;
+  
+}
+#head{
+  border-bottom: 1px solid white;}
+  #head::first-letter{color: #ffa502;}
+.container{
+  display: flex;
+  align-content: center;
+  justify-content: space-evenly;
+}
+#mainText{
+  background-color: #7f8fa6 ;
+  text-align: center;
+  border-top:  white;
+  border-left: white;
+  border-right: white;
+  color: #fff;
+}
+#mainText::first-letter{color: #ffa502;}
+#btn{
+  border: 2px solid  #7f8fa6;
+  height: 2rem;
+  width: 4rem;
+  text-align: center;
+  color: #dcdde1;
+  background-color:#ffa502;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  box-shadow:
+  rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+  rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+#btn:active{
+  box-shadow:0  0  0  rgba(255, 254, 254, 0);
+}
+.listBox{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+ul{
+  margin: 1.5rem;
+  list-style: none;
+}
+li{
+  
+  margin: 1rem;
+  border-bottom: 2px solid #ffa502;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.listStyle{
+  /* border: 2px solid grey; */
+  display: flex;
+  justify-content: space-between ;
+  align-items: center;
+  width: 30rem;
+}
+.listBtn{
+  margin-right: 2rem;
+  border: 2px solid white;
+    padding: 0.3rem;
+    box-shadow:
+    rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    cursor: pointer;
+    margin: 0 1rem;
+
+}
+.listBtn:active{
+  box-shadow: 0 0 0 white;
+
+}
+.listBtn:hover{color: rgba(255, 68, 0, 0.58);}
+  
+
+@media (min-width:320px) and (max-width:375px) {
+  .mainContainer{margin: 3rem 5rem;}
+}
+@media (min-width:375px) and (max-width:425px) {
+  .mainContainer{margin: 3rem 5rem;}
+}
+@media (min-width:425px) and (max-width:768px) {
+  .mainContainer{margin: 3rem 5rem;}
+}
+
+.containers_Container{
+  height: 86.5vh;
+  width: 100vw;
 }
